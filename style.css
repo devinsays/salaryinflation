@@ -1,0 +1,70 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 18px;
+    padding: 5vw;
+    min-height: calc(100vh - 10vw);
+    display: flex;
+    align-items: center;
+    background: #ada7ff;
+}
+
+/* Typography clamp styles documentation:
+/* https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/ */
+#page {
+    max-width: 880px;
+    margin: 0 auto;
+    font-size: clamp(0.9rem, 0.8250rem + 0.3333vw, 1rem);
+}
+
+h1 {
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(1.8rem, 0.5538rem + 6.2308vw, 3.6rem);
+    margin: 0 0 30px;
+    line-height: 1.1;
+}
+
+input,
+select {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(0.9rem, 0.8250rem + 0.3333vw, 1rem);
+}
+
+input {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 10px 10px;
+}
+
+select {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 10px 10px;
+}
+
+.button {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 10px 30px;
+    margin: 20px 0;
+}
+
+#wage {
+    max-width: 160px;
+}
+
+.row {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.fields-row {
+    margin-bottom: 10px;
+}
+
+#result-wrap {
+    font-weight: 700;
+    font-size: 36px;
+}

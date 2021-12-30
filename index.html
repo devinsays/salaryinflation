@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Salary Inflation Calculator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+        <link href="/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="page">
+            <h1>Has your salary kept up with inflation?</h1>
+            <p>
+                <span class="row fields-row">
+                    $<input type="number" id="wage" placeholder="50000" value="15">
+                    in
+                    <select name="month" id="month">
+                        <option value='01' selected>January</option>
+                        <option value='02'>February</option>
+                        <option value='03'>March</option>
+                        <option value='04'>April</option>
+                        <option value='05'>May</option>
+                        <option value='06'>June</option>
+                        <option value='07'>July</option>
+                        <option value='08'>August</option>
+                        <option value='09'>September</option>
+                        <option value='10'>October</option>
+                        <option value='11'>November</option>
+                        <option value='12'>December</option>
+                    </select>
+                    of
+                    <select name="year" id="year">
+                        <option value='2010'>2010</option>
+                        <option value='2011'>2011</option>
+                        <option value='2012'>2012</option>
+                        <option value='2013'>2013</option>
+                        <option value='2014'>2014</option>
+                        <option value='2015'>2015</option>
+                        <option value='2016'>2016</option>
+                        <option value='2017'>2017</option>
+                        <option value='2017'>2017</option>
+                        <option value='2018'>2018</option>
+                        <option value='2019'>2019</option>
+                        <option value='2020' selected>2020</option>
+                        <option value='2021'>2021</option>
+                    </select>
+                    would be
+                </span>
+                <span class="row">
+                    <span id="result-wrap">$<span id="result">16.14</span></span>
+                    in today's dollars when adjusted for inflation.
+                </span>
+                </span>
+            </p>
+            <p>
+                <input id="calculate" class="button" type="submit" value="Calculate">
+            </p>
+            <p>(Most recent data from November 2021. Calculated using the <a href="https://www.bls.gov/cpi/">Consumer Price Index</a>. Data provided by the <a href="https://www.bls.gov/data/inflation_calculator.htm">U.S. Bureau of Labor Statistics</a>.)</p>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
