@@ -16,12 +16,17 @@
     </head>
     <body>
         <div id="page">
-            <h1>Has your salary kept up with inflation?</h1>
+            <h1>Calculate your salary to adjust for inflation.</h1>
             <p>
-                <span class="row fields-row">
-                    $<input type="number" id="wage" placeholder="50000" value="15">
-                    in
-                    <span class="mobile-break"></span>
+                <label>What is your current salary or hourly rate?</label>
+                <span class="fields-row">
+                    <span class="currency">$</span>
+                    <input type="number" id="wage" placeholder="50000" value="15">
+                </span>
+            </p>
+            <p>
+                <label>When was your wage last set or increased?</label>
+                <span class="fields-row">
                     <select name="month" id="month">
                         <option value='01' selected>January</option>
                         <option value='02'>February</option>
@@ -36,7 +41,6 @@
                         <option value='11'>November</option>
                         <option value='12'>December</option>
                     </select>
-                    of
                     <select name="year" id="year">
                         <option value='2010'>2010</option>
                         <option value='2011'>2011</option>
@@ -52,19 +56,19 @@
                         <option value='2020' selected>2020</option>
                         <option value='2021'>2021</option>
                     </select>
-                    <span class="mobile-break"></span>
-                    would be
-                </span>
-                <span class="row">
-                    <span id="result-wrap">$<span id="result">16.14</span></span>
-                    in today's dollars when adjusted for inflation.
-                </span>
                 </span>
             </p>
-            <p>
-                <input id="calculate" class="button" type="submit" value="Calculate">
-            </p>
-            <p>(Most recent data from November 2021. Calculated using the <a href="https://www.bls.gov/cpi/">Consumer Price Index</a>. Data provided by the <a href="https://www.bls.gov/data/inflation_calculator.htm">U.S. Bureau of Labor Statistics</a>.)</p>
+            <input id="calculate" class="button" type="submit" value="Calculate Inflation Adjustment">
+            <div id="result-section">
+                <div id="result-box">
+                    <p>To keep up with inflation, you would need a raise of <b>$<span id="result-adjustment">1.14</span></b>.</p>
+                    <p>Your new wage should be at least:
+                        <span class="result-wrap">$<span id="result-wage">16.14</span></span>
+                    </p>
+                </div>
+                <p id="result-text">A wage of <b>$16.14</b> in today's dollars (11/2021) is the same as <b>$15.00</b> in 01/2020 in terms of purchasing power.</p>
+            </div>
+            <p class="about">This was calculated using the <a href="https://www.bls.gov/cpi/">Consumer Price Index</a>. Data provided by the <a href="https://www.bls.gov/data/inflation_calculator.htm">U.S. Bureau of Labor Statistics</a>. Source code <a href="https://github.com/devinsays/salaryinflation">available on GitHub</a>.</p>
         </div>
         <script src="script.js"></script>
     </body>
