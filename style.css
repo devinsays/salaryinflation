@@ -29,6 +29,10 @@ h1 {
     line-height: 1.1;
 }
 
+p {
+    line-height: 1.5;
+}
+
 input,
 select {
     font-family: 'IBM Plex Mono', monospace;
@@ -48,6 +52,7 @@ select {
 }
 
 .button {
+    font-weight: bold;
     cursor: pointer;
     background: #FFD866;
     border: 2px solid #000;
@@ -59,23 +64,20 @@ select {
     max-width: 160px;
 }
 
-.row {
-    display: block;
-    margin-bottom: 5px;
-}
-
 .fields-row {
+    display: block;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
-#result-wrap {
-    font-weight: 700;
-    font-size: 36px;
+#result-box {
+    margin-top: 10px;
+    border-top: 4px solid #000;
+    border-bottom: 4px solid #000;
 }
 
-@media (max-width: 767px) {
-    .mobile-break {
-        display: block;
-        margin-top: 15px;
-    }
+.result-wrap {
+    display: block;
+    font-weight: 700;
+    font-size: 36px;
 }

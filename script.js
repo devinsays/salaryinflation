@@ -148,11 +148,13 @@ const inflation = {
 
 // Elements
 const calculateButton = document.getElementById('calculate');
-const resultText = document.getElementById('result');
+const resultWage = document.getElementById('result-wage');
+const resultAdjustment = document.getElementById('result-adjustment');
+const resultText = document.getElementById('result-text');
 
 calculateButton.onclick = (e) => {
     // Fields
-    let wage = document.getElementById('wage').value;
+    let wage = (document.getElementById('wage').value * 1).toFixed(2);
     let month = document.getElementById('month').value;
     let year = document.getElementById('year').value;
 
@@ -166,6 +168,13 @@ calculateButton.onclick = (e) => {
         return previous;
     }, 0);
 
-    const result = (wage * (1 + (totalInflation/100))).toFixed(2);
-    resultText.innerText = result;
+    let result = (wage * (1 + (totalInflation/100))).toFixed(2);
+    let difference = (result - wage).toFixed(2);
+
+
+    // Output values
+    resultWage.innerText = result;
+    resultAdjustment.innerText = difference;
+    let output = `A wage of <b>$${result}</b> in today's dollars (11/2021) is the same as <b>$${wage}</b> in ${month}/${year} in terms of purchasing power.`;
+    resultText.innerHTML = output;
 }
