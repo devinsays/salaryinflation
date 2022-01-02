@@ -37,6 +37,8 @@ input,
 select {
     font-family: 'IBM Plex Mono', monospace;
     font-size: clamp(0.9rem, 0.8250rem + 0.3333vw, 1rem);
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 input {
@@ -61,13 +63,28 @@ select {
 }
 
 #wage {
-    max-width: 160px;
+    max-width: 140px;
+    padding-left: 25px;
+}
+
+.currency {
+    position: absolute;
+    display: block;
+    transform: translate(0, -50%);
+    top: 50%;
+    left: 10px;
+    color: #666;
 }
 
 .fields-row {
     display: block;
+    position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+#result-section {
+    display: none;
 }
 
 #result-box {

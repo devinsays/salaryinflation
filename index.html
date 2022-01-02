@@ -20,6 +20,7 @@
             <p>
                 <label>What is your current salary or hourly rate?</label>
                 <span class="fields-row">
+                    <span class="currency">$</span>
                     <input type="number" id="wage" placeholder="50000" value="15">
                 </span>
             </p>
@@ -58,13 +59,15 @@
                 </span>
             </p>
             <input id="calculate" class="button" type="submit" value="Calculate Inflation Adjustment">
-            <div id="result-box">
-                <p>To keep up with inflation, you would need a raise of <b>$<span id="result-adjustment">1.14</span></b>.</p>
-                <p>Your new wage should be at least:
-                    <span class="result-wrap">$<span id="result-wage">16.14</span></span>
-                </p>
+            <div id="result-section">
+                <div id="result-box">
+                    <p>To keep up with inflation, you would need a raise of <b>$<span id="result-adjustment">1.14</span></b>.</p>
+                    <p>Your new wage should be at least:
+                        <span class="result-wrap">$<span id="result-wage">16.14</span></span>
+                    </p>
+                </div>
+                <p id="result-text">A wage of <b>$16.14</b> in today's dollars (11/2021) is the same as <b>$15.00</b> in 01/2020 in terms of purchasing power.</p>
             </div>
-            <p id="result-text">A wage of <b>$16.14</b> in today's dollars (11/2021) is the same as <b>$15.00</b> in 01/2020 in terms of purchasing power.</p>
             <p class="about">This was calculated using the <a href="https://www.bls.gov/cpi/">Consumer Price Index</a>. Data provided by the <a href="https://www.bls.gov/data/inflation_calculator.htm">U.S. Bureau of Labor Statistics</a>. Source code <a href="https://github.com/devinsays/salaryinflation">available on GitHub</a>.</p>
         </div>
         <script src="script.js"></script>
