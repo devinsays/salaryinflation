@@ -6,6 +6,9 @@
         <link rel="profile" href="https://gmpg.org/xfn/11">
         <meta name="robots" content="index, follow" />
         <title>Salary Inflation Calculator</title>
+        <meta property="og:image" content="/assets/screenshot.gif" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
         <link rel="icon" type="image/svg+xml" href="/assets/favicon.png">
         <link rel="apple-touch-icon" href="/assets/favicon.png">
@@ -16,7 +19,7 @@
     </head>
     <body>
         <div id="page">
-            <h1>Calculate your salary to adjust for inflation.</h1>
+            <h1>Calculate your salary inflation adjustment.</h1>
             <p>
                 <label>What is your current salary or hourly rate?</label>
                 <span class="fields-row">
@@ -25,7 +28,7 @@
                 </span>
             </p>
             <p>
-                <label>When was your wage last set or increased?</label>
+                <label>When was your wage last increased?</label>
                 <span class="fields-row">
                     <select name="month" id="month">
                         <option value='01' selected>January</option>
@@ -61,14 +64,14 @@
             <input id="calculate" class="button" type="submit" value="Calculate Inflation Adjustment">
             <div id="result-section">
                 <div id="result-box">
-                    <p>To keep up with inflation, you would need a raise of <b>$<span id="result-adjustment">1.14</span></b>.</p>
+                    <p>To keep up with inflation you would need a raise of <mark>$<span id="result-adjustment">1.14</span></mark>.</p>
                     <p>Your new wage should be at least:
                         <span class="result-wrap">$<span id="result-wage">16.14</span></span>
                     </p>
                 </div>
-                <p id="result-text">A wage of <b>$16.14</b> in today's dollars (11/2021) is the same as <b>$15.00</b> in 01/2020 in terms of purchasing power.</p>
+                <p id="result-text">A wage of <mark>$16.14</mark> in today's dollars (11/2021) is the same as <mark>$15.00</mark> in 01/2020 in terms of purchasing power.</p>
             </div>
-            <p class="about">This was calculated using the <a href="https://www.bls.gov/cpi/">Consumer Price Index</a>. Data provided by the <a href="https://www.bls.gov/data/inflation_calculator.htm">U.S. Bureau of Labor Statistics</a>. Source code <a href="https://github.com/devinsays/salaryinflation">available on GitHub</a>.</p>
+            <p class="about">Calculated using the <a href="https://www.bls.gov/cpi/">Consumer Price Index</a>. Data provided by the <a href="https://www.bls.gov/data/inflation_calculator.htm">U.S. Bureau of Labor Statistics</a>. Source code <a href="https://github.com/devinsays/salaryinflation">available on GitHub</a>.</p>
         </div>
         <script src="script.js"></script>
     </body>

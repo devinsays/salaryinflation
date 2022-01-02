@@ -6,21 +6,28 @@ body {
     padding: 5vw;
     display: flex;
     align-items: center;
-    background: #ada7ff;
+    background: #ADA7FF;
 
     @media (min-width: 768px) {
         min-height: calc(100vh - 10vw);
     }
 }
 
-/* Typography clamp styles documentation:
-/* https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/ */
+::selection {
+    background: #ffb7b7;
+}
+
+a {
+    color: #504b99;
+}
+
 #page {
     max-width: 880px;
     margin: 0 auto;
-    font-size: clamp(0.9rem, 0.8250rem + 0.3333vw, 1rem);
 }
 
+/* Typography clamp styles documentation:
+/* https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/ */
 h1 {
     font-weight: 700;
     font-style: italic;
@@ -34,32 +41,35 @@ p {
 }
 
 input,
-select {
+select,
+.button {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: clamp(0.9rem, 0.8250rem + 0.3333vw, 1rem);
+    font-size: 1rem;
     -webkit-appearance: none;
     border-radius: 0;
-}
-
-input {
     background: #fff;
-    border: 2px solid #000;
-    padding: 10px 10px;
-}
-
-select {
-    background: #fff;
-    border: 2px solid #000;
-    padding: 10px 10px;
+    color: #000;
+    border: 2px solid #333;
+    padding: 10px;
 }
 
 .button {
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
-    background: #FFD866;
-    border: 2px solid #000;
+    background: #FFE8BF;
+    border: 2px solid #333;
     padding: 10px 30px;
     margin: 20px 0;
+}
+
+.button:hover {
+    border-color: #000;
+}
+
+mark {
+    font-weight: 700;
+    background: transparent;
+    border-bottom: 2px solid #000;
 }
 
 #wage {
@@ -73,7 +83,7 @@ select {
     transform: translate(0, -50%);
     top: 50%;
     left: 10px;
-    color: #666;
+    color: #333;
 }
 
 .fields-row {
@@ -96,5 +106,5 @@ select {
 .result-wrap {
     display: block;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 2.2rem;
 }

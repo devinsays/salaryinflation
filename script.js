@@ -186,7 +186,7 @@ calculateButton.onclick = (e) => {
     // Output values
     resultWage.innerText = result;
     resultAdjustment.innerText = difference;
-    let output = `A wage of <b>$${result}</b> in today's dollars (11/2021) is the same as <b>$${wage}</b> in ${month}/${year} in terms of purchasing power.`;
+    let output = `A wage of <mark>$${result}</mark> in today's dollars (11/2021) is the same as <mark>$${wage}</mark> in ${month}/${year} in terms of purchasing power.`;
     resultText.innerHTML = output;
     resultSection.style.display = 'block';
 }
