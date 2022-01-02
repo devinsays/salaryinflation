@@ -4,10 +4,13 @@ body {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 18px;
     padding: 5vw;
-    min-height: calc(100vh - 10vw);
     display: flex;
     align-items: center;
     background: #ada7ff;
+
+    @media (min-width: 768px) {
+        min-height: calc(100vh - 10vw);
+    }
 }
 
 /* Typography clamp styles documentation:
@@ -45,7 +48,8 @@ select {
 }
 
 .button {
-    background: #fff;
+    cursor: pointer;
+    background: #FFD866;
     border: 2px solid #000;
     padding: 10px 30px;
     margin: 20px 0;
@@ -67,4 +71,11 @@ select {
 #result-wrap {
     font-weight: 700;
     font-size: 36px;
+}
+
+@media (max-width: 767px) {
+    .mobile-break {
+        display: block;
+        margin-top: 15px;
+    }
 }
