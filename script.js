@@ -147,6 +147,8 @@ const inflation = {
 }
 
 // Elements
+const monthSelect = document.getElementById('month');
+const yearSelect = document.getElementById('year');
 const calculateButton = document.getElementById('calculate');
 const resultWage = document.getElementById('result-wage');
 const resultSection = document.getElementById('result-section');
@@ -156,8 +158,8 @@ const resultText = document.getElementById('result-text');
 calculateButton.onclick = (e) => {
     // Fields
     let wage = document.getElementById('wage').value;
-    let month = document.getElementById('month').value;
-    let year = document.getElementById('year').value;
+    let month = monthSelect.value;
+    let year = yearSelect.value;
 
     // Safari allows commas in numeric fields, but Chrome does not.
     wage = wage.replace(/,/g, '');
@@ -186,7 +188,28 @@ calculateButton.onclick = (e) => {
     // Output values
     resultWage.innerText = result;
     resultAdjustment.innerText = difference;
-    let output = `A wage of <mark>$${result}</mark> in today's dollars (11/2021) is the same as <mark>$${wage}</mark> in ${month}/${year} in terms of purchasing power.`;
+    let output = `A wage of <mark>$${result}</mark> in today's dollars (${mostRecentDataDate}) is the same as <mark>$${wage}</mark> in ${month}/${year} in terms of purchasing power.`;
     resultText.innerHTML = output;
     resultSection.style.display = 'block';
 }
+
+// Make sure a future date cannot be selected.
+const mostRecentDataKey = Object.keys(inflation).sort().reverse()[0];
+const mostRecentDataYear = mostRecentDataKey.slice(0, 4);
+const mostRecentDataMonth = mostRecentDataKey.slice(4, 6);
+yearSelect.addEventListener('change', (e) => {
+    if (mostRecentDataYear === e.target.value) {
+        for (let option of monthSelect) {
+            if (option.value > mostRecentDataMonth) {
+                option.disabled = true;
+            }
+        }
+        if (monthSelect.value > mostRecentDataMonth) {
+            monthSelect.value = '01';
+        }
+    } else {
+        for (let option of monthSelect) {
+            option.disabled = false;
+        }
+    }
+});
