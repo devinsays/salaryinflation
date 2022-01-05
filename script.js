@@ -208,7 +208,7 @@ calculateButton.onclick = (e) => {
     // Output values
     resultWage.innerText = result;
     resultAdjustment.innerText = difference;
-    resultPercent.innerText = totalInflation.toFixed(2);
+    resultPercent.innerText = parseFloat( totalInflation.toFixed(2) );
     let output = `A wage of <mark>$${result}</mark> in today's dollars (${mostRecentDataMonth}/${mostRecentDataYear}) is the same as <mark>$${wage}</mark> in ${month}/${year} in terms of purchasing power.`;
     resultText.innerHTML = output;
     resultSection.style.display = 'block';
