@@ -147,6 +147,7 @@ const inflation = {
 }
 
 // Elements
+const wageField = document.getElementById('wage');
 const monthSelect = document.getElementById('month');
 const yearSelect = document.getElementById('year');
 const calculateButton = document.getElementById('calculate');
@@ -155,6 +156,24 @@ const resultSection = document.getElementById('result-section');
 const resultAdjustment = document.getElementById('result-adjustment');
 const resultPercent = document.getElementById('result-percent');
 const resultText = document.getElementById('result-text');
+
+// Set defaults based on query strings
+document.addEventListener("DOMContentLoaded", function(){
+    const queryParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(queryParams.entries());
+
+    if (params.wage) {
+        wageField.value = params.wage;
+    }
+
+    if (params.month) {
+        monthSelect.value = params.month;
+    }
+
+    if (params.year) {
+        yearSelect.value = params.year;
+    }
+});
 
 // Make sure a future date cannot be selected.
 const mostRecentDataKey = Object.keys(inflation).sort().reverse()[0];
@@ -179,7 +198,7 @@ yearSelect.addEventListener('change', (e) => {
 
 calculateButton.onclick = (e) => {
     // Fields
-    let wage = document.getElementById('wage').value;
+    let wage = wageField.value;
     let month = monthSelect.value;
     let year = yearSelect.value;
 
