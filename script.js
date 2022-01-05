@@ -199,13 +199,11 @@ calculateButton.onclick = (e) => {
 
     let result = parseFloat((wage * (1 + (totalInflation/100))).toFixed(2),10);
     let difference = parseFloat((result - wage).toFixed(2),10);
-    wage = parseFloat(wage,10).toLocaleString("en-US");
+    wage = parseFloat(wage,10).toLocaleString("en-US", {maximumFractionDigits: 2, minimumFractionDigits: 2});
 
-    if ( result > 999 ) {
-        // Comma format the result
-        result = result.toLocaleString("en-US");
-        difference = difference.toLocaleString("en-US");
-    }
+    // Comma format the result
+    result = result.toLocaleString("en-US", {maximumFractionDigits: 2, minimumFractionDigits: 2});
+    difference = difference.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: 2});
 
     // Output values
     resultWage.innerText = result;
@@ -215,5 +213,3 @@ calculateButton.onclick = (e) => {
     resultText.innerHTML = output;
     resultSection.style.display = 'block';
 }
-
-
