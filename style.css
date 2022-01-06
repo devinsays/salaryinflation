@@ -93,12 +93,6 @@ mark {
     margin-bottom: 10px;
 }
 
-#validation-message{
-    font-size: 16px;
-    color: #FFE8BF;
-    font-weight: 700;
-}
-
 #result-section {
     display: none;
 }
