@@ -198,7 +198,7 @@ yearSelect.addEventListener('change', (e) => {
 });
 
 calculateButton.onclick = (e) => {
-    if (wage === '' || wage === '0.00') {
+    if (wageField.value === '' || wageField.value === '0') {
         alert('Please enter a wage amount to calculate.');
         return;
     }
