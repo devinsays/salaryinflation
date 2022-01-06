@@ -151,11 +151,7 @@ const wageField = document.getElementById('wage');
 const monthSelect = document.getElementById('month');
 const yearSelect = document.getElementById('year');
 const calculateButton = document.getElementById('calculate');
-const resultWage = document.getElementById('result-wage');
 const resultSection = document.getElementById('result-section');
-const resultAdjustment = document.getElementById('result-adjustment');
-const resultPercent = document.getElementById('result-percent');
-const resultText = document.getElementById('result-text');
 
 // Set defaults based on query strings
 document.addEventListener("DOMContentLoaded", function(){
@@ -225,10 +221,16 @@ calculateButton.onclick = (e) => {
     difference = difference.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: 2});
 
     // Output values
-    resultWage.innerText = result;
-    resultAdjustment.innerText = difference;
-    resultPercent.innerText = parseFloat( totalInflation.toFixed(2) );
-    let output = `A wage of <mark>$${result}</mark> in today's dollars (${mostRecentDataMonth}/${mostRecentDataYear}) is the same as <mark>$${wage}</mark> in ${month}/${year} in terms of purchasing power.`;
-    resultText.innerHTML = output;
+    let resultPercent = parseFloat( totalInflation.toFixed(2) )
+    let output = `
+    <div id="result-box">
+        <p>To keep up with inflation you would need a raise of <mark>$${difference}</mark> (${resultPercent}%).</p>
+        <p>Your new wage should be at least:
+            <span class="result-wrap">$${result}</span>
+        </p>
+    </div>
+    <p id="result-text">A wage of <mark>$${result}</mark> in today's dollars (${mostRecentDataMonth}/${mostRecentDataYear}) is the same as <mark>$${wage}</mark> in ${month}/${year} in terms of purchasing power.</p>
+    `;
+    resultSection.innerHTML = output;
     resultSection.style.display = 'block';
 }

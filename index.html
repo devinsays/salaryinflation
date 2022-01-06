@@ -24,7 +24,7 @@
                 <label>What is your current salary or hourly rate?</label>
                 <span class="fields-row">
                     <span class="currency">$</span>
-                    <input id="wage" type="number" placeholder="50000" value="15" min="0" pattern="[0-9]*" inputmode="decimal">
+                    <input id="wage" type="number" placeholder="15" value="" min="0" pattern="[0-9]*" inputmode="decimal">
                 </span>
             </p>
             <p>
@@ -62,15 +62,7 @@
                 </span>
             </p>
             <input id="calculate" class="button" type="submit" value="Calculate Inflation Adjustment">
-            <div id="result-section">
-                <div id="result-box">
-                    <p>To keep up with inflation you would need a raise of <mark>$<span id="result-adjustment">1.14</span></mark> (<span id="result-percent">7.6</span>%).</p>
-                    <p>Your new wage should be at least:
-                        <span class="result-wrap">$<span id="result-wage">16.14</span></span>
-                    </p>
-                </div>
-                <p id="result-text">A wage of <mark>$16.14</mark> in today's dollars (11/2021) is the same as <mark>$15.00</mark> in 01/2020 in terms of purchasing power.</p>
-            </div>
+            <div id="result-section"></div>
             <p class="about">Calculated using the <a href="https://www.bls.gov/cpi/">Consumer Price Index</a>. Data provided by the <a href="https://www.bls.gov/data/inflation_calculator.htm">U.S. Bureau of Labor Statistics</a>. Source code <a href="https://github.com/devinsays/salaryinflation">available on GitHub</a>.</p>
         </div>
         <script src="script.js"></script>
