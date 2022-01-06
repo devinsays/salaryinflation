@@ -169,6 +169,11 @@ document.addEventListener("DOMContentLoaded", function(){
     if (params.year) {
         yearSelect.value = params.year;
     }
+
+    // Show the calculations automatically if a wage is set.
+    if (params.wage) {
+        calculate();
+    }
 });
 
 // Make sure a future date cannot be selected.
@@ -193,6 +198,15 @@ yearSelect.addEventListener('change', (e) => {
 });
 
 calculateButton.onclick = (e) => {
+    if (wage === '' || wage === '0.00') {
+        alert('Please enter a wage amount to calculate.');
+        return;
+    }
+
+    calculate();
+}
+
+function calculate() {
     // Fields
     let wage = wageField.value;
     let month = monthSelect.value;
