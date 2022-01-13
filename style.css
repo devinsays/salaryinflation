@@ -7,10 +7,6 @@ body {
     display: flex;
     align-items: center;
     background: #ADA7FF;
-
-    @media (min-width: 768px) {
-        min-height: calc(100vh - 10vw);
-    }
 }
 
 ::selection {
@@ -42,7 +38,8 @@ p {
 
 input,
 select,
-.button {
+.button,
+button {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1rem;
     -webkit-appearance: none;
@@ -58,7 +55,7 @@ select,
     cursor: pointer;
     background: #FFE8BF;
     border: 2px solid #333;
-    padding: 10px 30px;
+    padding: 10px 20px;
     margin: 20px 0;
 }
 
@@ -70,6 +67,19 @@ mark {
     font-weight: 700;
     background: transparent;
     border-bottom: 2px solid #000;
+}
+
+#link,
+#copy-link {
+    font-size: 0.85rem;
+}
+
+#link {
+    margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+    #link { width: 445px; }
 }
 
 #wage {
