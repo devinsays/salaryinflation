@@ -213,6 +213,9 @@ function calculate() {
     let month = monthSelect.value;
     let year = yearSelect.value;
 
+    // Link
+    let link = `https://salaryinflation.com?wage=${wage}&year=${year}&month=${month}`;
+
     // Safari allows commas in numeric fields but Chrome does not.
     wage = wage.replace(/,/g, '');
     wage = (wage * 1).toFixed(2);
@@ -240,10 +243,20 @@ function calculate() {
             <span class="result-wrap">$${result}</span>
         </p>
     </div>
-    <p id="result-text">A wage of <mark>$${result}</mark> in today's dollars (${mostRecentDataMonth}/${mostRecentDataYear}) is the same as <mark>$${wage}</mark> in ${month}/${year} in terms of purchasing power.</p>
+    <p>A wage of <mark>$${result}</mark> in today's dollars (${mostRecentDataMonth}/${mostRecentDataYear}) is the same as <mark>$${wage}</mark> in ${month}/${year} in terms of purchasing power.</p>
+    <p>Share this result:</p>
+    <input id="link" value="${link}"><button id="copy-link">Copy</button>
     `;
     resultSection.innerHTML = output;
     resultSection.style.display = 'block';
+
+    document.getElementById('copy-link').onclick = (e) => {
+        e.preventDefault();
+        const linkText = document.getElementById('link');
+        linkText.select();
+        document.execCommand("copy");
+        e.target.innerHTML = 'Copied!';
+    }
 }
 
 function getInflationPercent(inflationKey) {
