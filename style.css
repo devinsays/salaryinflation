@@ -69,11 +69,6 @@ mark {
     border-bottom: 2px solid #000;
 }
 
-#link,
-#copy-link {
-    font-size: 0.85rem;
-}
-
 #link {
     margin-right: 10px;
 }

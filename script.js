@@ -204,6 +204,13 @@ calculateButton.onclick = (e) => {
         return;
     }
 
+    // Remove query string params so previous values do not show for new calculation.
+    const uri = window.location.toString();
+    if (uri.indexOf("?") > 0) {
+        const clean_uri = uri.substring(0, uri.indexOf("?"));
+        window.history.pushState({}, document.title, clean_uri);
+    }
+
     calculate();
 }
 
